@@ -1,0 +1,151 @@
+<form [formGroup]="transactionForm" (ngSubmit)="saveTransation()">
+
+    <mat-card>
+        <mat-card-title>
+            Transaction Form
+        </mat-card-title>
+        <mat-card-content>
+            
+            <mat-radio-group
+                aria-label="Select an option"
+                class="example-radio-group"
+                formControlName="formActionType">
+                <mat-radio-button [value]="true">New</mat-radio-button>
+                <mat-radio-button [value]="false">Existing</mat-radio-button>
+            </mat-radio-group>
+
+            <div fxLayout="row wrap" 
+                fxLayout.sm="column"
+                fxLayout.xs="column"
+                fxLayoutGap="16px grid"
+                fxFlexFill>
+                <mat-form-field appearance="outline" fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%">
+                    <mat-label>Reference</mat-label>
+                    <input matInput placeholder="Reference" formControlName="reference" [matAutocomplete]="auto" disabled>
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of transactionReferenceList" [value]="option">
+                          {{option}}
+                        </mat-option>
+                    </mat-autocomplete>
+                    <mat-hint *ngIf="!transactionForm.value.formActionType">Type to find an existing reference</mat-hint>
+                </mat-form-field>
+            </div>
+            
+            <div fxLayout="row wrap" 
+                fxLayout.sm="column"
+                fxLayout.xs="column"
+                fxLayoutGap="16px grid"
+                fxFlexFill>
+                <mat-form-field appearance="outline" fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%">
+                    <mat-label>Customer number</mat-label>
+                    <input matInput placeholder="Customer number" formControlName="customerNumber" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%">
+                    <mat-label>Customer name</mat-label>
+                    <input matInput placeholder="Customer name" formControlName="customerName" required>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row wrap" 
+                fxLayout.sm="column"
+                fxLayout.xs="column"
+                fxLayoutGap="16px grid"
+                fxFlexFill>
+                <mat-form-field appearance="outline" fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%">
+                    <mat-label>Customer Phone number</mat-label>
+                    <input matInput placeholder="Customer Phone number" formControlName="customerPhoneNumber" required>
+                    <mat-hint>&#1645; Numbers only</mat-hint>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row wrap" 
+                fxLayout.sm="column"
+                fxLayout.xs="column"
+                fxLayoutGap="16px grid"
+                fxFlexFill>
+                <mat-form-field appearance="outline" fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%">
+                    <mat-label>Customer address</mat-label>
+                    <input matInput placeholder="Address Line 1" formControlName="customerAddressLine1" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%">
+                    <!-- <mat-label>Customer address</mat-label> -->
+                    <input matInput placeholder="Address Line 2" formControlName="customerAddressLine2" required>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row wrap" 
+                fxLayout.sm="column"
+                fxLayout.xs="column"
+                fxLayoutGap="16px grid"
+                fxFlexFill>
+                <mat-form-field appearance="outline" fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%">
+                    <mat-label>Transfer amount</mat-label>
+                    <input matInput type="number" placeholder="Transfer amount" formControlName="transferAmount" required>
+                    <mat-hint>&#1645; Numbers only</mat-hint>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%">
+                    <mat-label>Transfer currency</mat-label>
+                    <mat-select formControlName="transferCurrency" required>
+                        <mat-option *ngFor="let currency of currencyList" [value]="currency">
+                        {{ currency | uppercase }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row wrap" 
+                fxLayout.sm="column"
+                fxLayout.xs="column"
+                fxLayoutGap="16px grid"
+                fxFlexFill>
+                <mat-form-field appearance="outline" fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%">
+                    <mat-label>Beneficiary Bank</mat-label>
+                    <input matInput placeholder="Beneficiary Bank" formControlName="beneficiaryBank" required>
+                    <mat-hint>&#1645; Alphabet characters only</mat-hint>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%">
+                    <mat-label>Beneficiary Account Number</mat-label>
+                    <input matInput placeholder="Beneficiary Account Number" formControlName="beneficiaryAccountNumber" required>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row wrap" 
+                fxLayout.sm="column"
+                fxLayout.xs="column"
+                fxLayoutGap="16px grid"
+                fxFlexFill>
+                <mat-form-field appearance="outline" fxFlex="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+                    <mat-label>Payment details</mat-label>
+                    <textarea matInput placeholder="Payment details..." formControlName="paymentDetails" required></textarea>
+                    <mat-hint>&#1645; Alphabet characters only</mat-hint>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row wrap" 
+                fxLayout.sm="column"
+                fxLayout.xs="column"
+                fxLayoutGap="16px grid"
+                fxFlexFill>
+                <mat-form-field appearance="outline" fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%">
+                    <mat-label>Credit/Debit Card Details</mat-label>
+                    <input matInput placeholder="Credit/Debit Card Details" formControlName="cardDetails" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%">
+                    <mat-label>Region</mat-label>
+                    <mat-select formControlName="region" required>
+                        <mat-option *ngFor="let region of regionList" [value]="region">
+                        {{ region.regionName | titlecase }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </mat-card-content>
+        <mat-card-footer>
+            <div class="margin-16">
+                <button mat-stroked-button (click)="clearForm()">Cancel</button>&nbsp;
+                <button mat-raised-button type="submit" color="primary">Save</button>
+            </div>
+        </mat-card-footer>
+    </mat-card>
+
+</form>

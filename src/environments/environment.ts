@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  restApiUrl: 'http://localhost:4200/api', // front-end ip+post (uses reverse proxy)
+  signInUrl: 'http://localhost:4200/api/authentication/signIn'
 };
 
 /*

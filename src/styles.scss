@@ -1,1 +1,161 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* Clickable */
+.clickable-element {
+    cursor: pointer;
+}
+
+/* Width & height */
+.full-width {
+    width: 100%;
+    &-available {
+        width: -moz-available;
+        width: -webkit-fill-available;
+        width: fill-available;
+    }
+}
+.half-width {
+    width: 50%;
+}
+.full-height {
+    height: 100%;
+}
+
+/* Padding */
+.padding-8 {
+    padding: 8px;
+}
+.padding-0-16 {
+    padding: 0 16px;
+}
+.padding-16 {
+    padding: 16px;
+}
+.padding-top-16 {
+    padding-top: 16px;
+}
+.padding-32 {
+    padding: 32px;
+}
+.padding-32-16 {
+    padding: 32px 16px;
+}
+
+/* Margin */
+.margin-0 {
+    margin: 0;
+}
+.margin-auto {
+    margin: auto;
+}
+.margin-4 {
+    margin: 4px;
+}
+.margin-8 {
+    margin: 8px !important;
+}
+.margin-auto-8 {
+    margin: auto 8px;
+}
+.margin-16 {
+    margin: 16px !important;
+}
+.margin-16-0 {
+    margin: 16px 0;
+}
+.margin-0-16 {
+    margin: 0 16px;
+}
+.margin-32-0 {
+    margin: 32px 0;
+}
+.margin-0-32 {
+    margin: 0 32px;
+}
+.margin-20 {
+    margin: 20px;
+}
+.margin-0-20 {
+    margin: 0 20px;
+}
+.margin-32 {
+    margin: 32px;
+}
+.margin-64 {
+    margin: 64px;
+}
+.margin-64-0 {
+    margin: 64px 0;
+}
+.margin-1-right {
+    margin-right: 1px;
+}
+.margin-bottom-4 {
+    margin-bottom: 4px;
+}
+.margin-bottom-8 {
+    margin-bottom: 8px;
+}
+.margin-bottom-12 {
+    margin-bottom: 12px;
+}
+.margin-bottom-16 {
+    margin-bottom: 16px;
+}
+.margin-top-16 {
+    margin-top: 16px;
+}
+.margin-bottom-32 {
+    margin-bottom: 32px;
+}
+.margin-top-32 {
+    margin-top: 32px;
+}
+.margin-bottom-64 {
+    margin-bottom: 64px;
+}
+.margin-bottom-128 {
+    margin-bottom: 64px;
+}
+.margin-128-0 {
+    margin: 128px 0;
+}
+.margin-0-128 {
+    margin: 0 128px;
+}
+.margin-128 {
+    margin: 128px;
+}
+.margin-64-128 {
+    margin: 64px 128px;
+}
+.margin-right-8 {
+    margin-right: 8px;
+}
+
+/* spacer & flex */
+.flex-content {
+    display: flex;
+}
+.flex-spacer {
+    flex: 1 1 auto;
+}
+.content-center {
+    align-items: center;
+    justify-content: center;
+}
+.vertical-flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.vertical-spacer {
+    flex: 1;
+    flex-grow: 1;
+}

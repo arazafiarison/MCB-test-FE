@@ -1,0 +1,40 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary">
+    <div class="flex-content full-width">
+        <div class="flex-spacer"></div>
+        <button mat-button>
+            <mat-icon>logout</mat-icon>
+            Logout
+        </button>
+    </div>
+</mat-toolbar>
+<!-- End Toolbar -->
+
+<div class="full-height">
+    <mat-sidenav-container class="sidenav-container">
+        <!-- Sidenav -->
+        <mat-sidenav mode="side" opened class="sidenav-menu">
+            <button mat-button class="menu-button margin-8" [routerLink]="['/transaction/form']">
+                <mat-icon>description</mat-icon>
+                Form
+            </button>
+            <button mat-button class="menu-button margin-8" [routerLink]="['/transaction/list']">
+                <mat-icon>list</mat-icon>
+                Table
+            </button>
+            <button mat-button class="menu-button margin-8" [routerLink]="['']">
+                <mat-icon>face</mat-icon>
+                User profile
+            </button>
+        </mat-sidenav>
+        <!-- End Sidenav -->
+
+        <!-- Page content -->
+        <mat-sidenav-content>
+            <div class="page-content">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+        <!-- End Page content -->
+    </mat-sidenav-container>
+</div>

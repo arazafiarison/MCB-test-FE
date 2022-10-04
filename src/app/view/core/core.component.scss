@@ -1,0 +1,26 @@
+.sidenav-container {
+    height: 100%;
+}
+
+.sidenav-menu {
+    width: 200px;
+}
+
+.menu-button {
+    width: calc(100% - 32px);
+    text-align: left;
+}
+
+
+.logout {
+    display: flex;
+    flex-direction: column;
+    &-icon {
+        align-self: flex-end;
+    }
+}
+
+.page-content {
+    margin: 32px;
+    height: calc(100% - 96px);
+}
